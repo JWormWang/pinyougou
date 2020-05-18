@@ -39,7 +39,7 @@
     <springboot.starter.web>2.0.4.RELEASE</springboot.starter.web>
     <springboot.starter.thymeleaf>2.0.4.RELEASE</springboot.starter.thymeleaf>
     <spring.data.redis>2.0.4.RELEASE</spring.data.redis>
-    <fasterxml.jackson.version>2.9.8</fasterxml.jackson.version>
+    <fasterxml.jackson.version>2.9.10.4</fasterxml.jackson.version>
   </properties>
   <dependencyManagement>
     <dependencies>
