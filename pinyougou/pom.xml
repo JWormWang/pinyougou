@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.oracle</groupId>
+  <artifactId>pinyougou</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>pinyougou</name>
+
+  <modules>
+    <module>pinyougou-interface</module>
+    <module>pinyougou-pojo</module>
+    <module>pinyougou-dao</module>
+    <module>pinyougou-seckill-service</module>
+    <module>pinyougou-seckill-web</module>
+    <module>pinyougou-pay-service</module>
+    <module>pinyougou-common</module>
+  </modules>
+
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.0.4.RELEASE</version>
+    <relativePath/> <!-- lookup parent from repository -->
+  </parent>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <java.version>1.8</java.version>
+    <curator-framework.version>4.0.1</curator-framework.version>
+    <zookeeper.version>3.4.13</zookeeper.version>
+    <dubbo.starter.version>0.2.0</dubbo.starter.version>
+    <mybatis.version>2.1.0</mybatis.version>
+    <springboot.starter.test>2.0.4.RELEASE</springboot.starter.test>
+    <springboot.starter.web>2.0.4.RELEASE</springboot.starter.web>
+    <springboot.starter.thymeleaf>2.0.4.RELEASE</springboot.starter.thymeleaf>
+    <spring.data.redis>2.0.4.RELEASE</spring.data.redis>
+    <fasterxml.jackson.version>2.9.8</fasterxml.jackson.version>
+  </properties>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-test</artifactId>
+        <version>${springboot.starter.test}</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-web</artifactId>
+        <version>${springboot.starter.web}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        <version>${springboot.starter.thymeleaf}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-data-redis</artifactId>
+        <version>${spring.data.redis}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-databind</artifactId>
+        <version>${fasterxml.jackson.version}</version>
+      </dependency>
+      <!--dubbo-->
+      <dependency>
+        <groupId>com.alibaba.boot</groupId>
+        <artifactId>dubbo-spring-boot-starter</artifactId>
+        <version>${dubbo.starter.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.curator</groupId>
+        <artifactId>curator-framework</artifactId>
+        <version>${curator-framework.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.zookeeper</groupId>
+        <artifactId>zookeeper</artifactId>
+        <version>${zookeeper.version}</version>
+      </dependency>
+      <!-- mybatis -->
+      <dependency>
+        <groupId>org.mybatis.spring.boot</groupId>
+        <artifactId>mybatis-spring-boot-starter</artifactId>
+        <version>${mybatis.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
+</project>
