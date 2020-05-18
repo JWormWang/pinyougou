@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/pinyougou.iml" filepath="$PROJECT_DIR$/pinyougou.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pinyougou-common/pinyougou-common.iml" filepath="$PROJECT_DIR$/pinyougou-common/pinyougou-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pinyougou-dao/pinyougou-dao.iml" filepath="$PROJECT_DIR$/pinyougou-dao/pinyougou-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pinyougou-interface/pinyougou-interface.iml" filepath="$PROJECT_DIR$/pinyougou-interface/pinyougou-interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pinyougou-pay-service/pinyougou-pay-service.iml" filepath="$PROJECT_DIR$/pinyougou-pay-service/pinyougou-pay-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pinyougou-pojo/pinyougou-pojo.iml" filepath="$PROJECT_DIR$/pinyougou-pojo/pinyougou-pojo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pinyougou-seckill-service/pinyougou-seckill-service.iml" filepath="$PROJECT_DIR$/pinyougou-seckill-service/pinyougou-seckill-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pinyougou-seckill-web/pinyougou-seckill-web.iml" filepath="$PROJECT_DIR$/pinyougou-seckill-web/pinyougou-seckill-web.iml" />
+    </modules>
+  </component>
+</project>
