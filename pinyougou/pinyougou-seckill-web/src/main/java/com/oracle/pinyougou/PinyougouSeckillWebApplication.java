@@ -8,8 +8,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @EnableDubbo
 public class PinyougouSeckillWebApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(PinyougouSeckillWebApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(PinyougouSeckillWebApplication.class, args);
+    }
 
 }
