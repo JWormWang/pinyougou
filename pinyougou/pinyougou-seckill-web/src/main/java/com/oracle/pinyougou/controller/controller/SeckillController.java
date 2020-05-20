@@ -23,6 +23,7 @@ public class SeckillController {
                    (double)good.getStockCount())/(double)good.getNum()*100));
        }
        map.put("goods",goods);
+
        return "seckill-index";
    }
 }

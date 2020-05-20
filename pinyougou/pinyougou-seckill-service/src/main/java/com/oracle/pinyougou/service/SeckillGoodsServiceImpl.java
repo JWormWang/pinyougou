@@ -58,7 +58,7 @@ public class SeckillGoodsServiceImpl implements SeckillGoodsService{
         //从缓存读取
         List<TbSeckillGoods> list=redisTemplate.boundHashOps("seckillgoods").values();
         //判断list是否为空,若为空，则缓存中没有秒杀商品数据
-        if(list==null&&list.size()==0){
+        if(list==null||list.size()==0){
             //从数据库读取
             TbSeckillGoodsExample goodsExample = new TbSeckillGoodsExample();
             TbSeckillGoodsExample.Criteria criteria = goodsExample.createCriteria();
