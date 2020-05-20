@@ -9,6 +9,8 @@ import entity.PageResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 @Service
@@ -74,7 +76,16 @@ public class SeckillGoodsServiceImpl implements SeckillGoodsService{
         }else{
             System.out.println("从缓存读取秒杀商品");
         }
-
+      //按价格排序
+        Collections.sort(list, new Comparator<TbSeckillGoods>() {
+            @Override
+            public int compare(TbSeckillGoods o1, TbSeckillGoods o2) {
+                if(o1.getCostPrice().doubleValue()>o2.getCostPrice().doubleValue()){
+                    return  1;
+                }
+                return -1;
+            }
+        });
 
         return list;
     }
