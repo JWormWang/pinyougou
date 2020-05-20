@@ -8,6 +8,7 @@ import com.oracle.pinyougou.seckill.service.SeckillGoodsService;
 import entity.PageResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
+import util.Constant;
 
 import java.util.Collections;
 import java.util.Comparator;
@@ -58,7 +59,7 @@ public class SeckillGoodsServiceImpl implements SeckillGoodsService{
     @Override
     public List<TbSeckillGoods> findList() {
         //从缓存读取
-        List<TbSeckillGoods> list=redisTemplate.boundHashOps("seckillgoods").values();
+        List<TbSeckillGoods> list=redisTemplate.boundHashOps(Constant.SECKILLGOOD_KEY).values();
         //判断list是否为空,若为空，则缓存中没有秒杀商品数据
         if(list==null||list.size()==0){
             //从数据库读取
@@ -70,7 +71,7 @@ public class SeckillGoodsServiceImpl implements SeckillGoodsService{
              list = seckillGoodsMapper.selectByExample(goodsExample);
              //数据库读的内容写入redis
             for(TbSeckillGoods good:list){
-                redisTemplate.boundHashOps("seckillgoods").put(good.getId(),good);
+                redisTemplate.boundHashOps(Constant.SECKILLGOOD_KEY).put(good.getId(),good);
             }
             System.out.println("从数据库读取秒杀商品");
         }else{
@@ -92,6 +93,6 @@ public class SeckillGoodsServiceImpl implements SeckillGoodsService{
 
     @Override
     public TbSeckillGoods findOneFromRedis(Long id) {
-       return null;
+    return  (TbSeckillGoods) redisTemplate.boundHashOps(Constant.SECKILLGOOD_KEY).get(id);
     }
 }

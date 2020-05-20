@@ -36,34 +36,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SeckillController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pinyougou-seckill-web/src/main/java/com/oracle/pinyougou/controller/controller/SeckillController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="25" selection-start-line="25" selection-end-line="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SeckillGoodsServiceImpl.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SeckillGoodsServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pinyougou-seckill-service/src/main/java/com/oracle/pinyougou/service/SeckillGoodsServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="197">
-              <caret line="85" column="26" lean-forward="true" selection-start-line="85" selection-start-column="26" selection-end-line="85" selection-end-column="26" />
+              <caret line="94" column="42" selection-start-line="94" selection-start-column="26" selection-end-line="94" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2754#2755#0" expanded="true" />
-                <element signature="e#2780#2781#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PinyougouSeckillServiceApplication.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pinyougou-seckill-service/src/main/java/com/oracle/pinyougou/PinyougouSeckillServiceApplication.java">
+      <file leaf-file-name="SeckillController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pinyougou-seckill-web/src/main/java/com/oracle/pinyougou/controller/controller/SeckillController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+            <state relative-caret-position="135">
+              <caret line="32" selection-start-line="32" selection-end-line="32" />
             </state>
           </provider>
         </entry>
@@ -71,13 +60,29 @@
       <file leaf-file-name="seckill-index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pinyougou-seckill-web/src/main/resources/templates/seckill-index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
-              <caret line="175" column="116" selection-start-line="175" selection-start-column="116" selection-end-line="175" selection-end-column="116" />
+            <state relative-caret-position="185">
+              <caret line="179" column="95" lean-forward="true" selection-start-line="179" selection-start-column="95" selection-end-line="179" selection-end-column="95" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="seckill-item.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pinyougou-seckill-web/src/main/resources/templates/seckill-item.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="80">
+              <caret line="200" column="64" selection-start-line="200" selection-start-column="64" selection-end-line="200" selection-end-column="64" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -86,10 +91,12 @@
         <option value="$PROJECT_DIR$/pinyougou-seckill-service/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/pinyougou-seckill-service/pom.xml" />
         <option value="$PROJECT_DIR$/pinyougou-seckill-web/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/pinyougou-seckill-web/src/main/resources/templates/seckill-index.html" />
         <option value="$PROJECT_DIR$/pinyougou-seckill-web/src/main/java/com/oracle/pinyougou/PinyougouSeckillWebApplication.java" />
-        <option value="$PROJECT_DIR$/pinyougou-seckill-web/src/main/java/com/oracle/pinyougou/controller/controller/SeckillController.java" />
+        <option value="$PROJECT_DIR$/pinyougou-common/src/main/java/util/Constant.java" />
         <option value="$PROJECT_DIR$/pinyougou-seckill-service/src/main/java/com/oracle/pinyougou/service/SeckillGoodsServiceImpl.java" />
+        <option value="$PROJECT_DIR$/pinyougou-seckill-web/src/main/resources/templates/seckill-index.html" />
+        <option value="$PROJECT_DIR$/pinyougou-seckill-web/src/main/java/com/oracle/pinyougou/controller/controller/SeckillController.java" />
+        <option value="$PROJECT_DIR$/pinyougou-seckill-web/src/main/resources/templates/seckill-item.html" />
       </list>
     </option>
   </component>
@@ -120,7 +127,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-12" />
     <option name="y" value="-12" />
     <option name="width" value="1911" />
@@ -188,6 +195,36 @@
               <item name="pinyougou" type="462c0819:PsiDirectoryNode" />
               <item name="pinyougou-seckill-web" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="pinyougou" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pinyougou" type="462c0819:PsiDirectoryNode" />
+              <item name="pinyougou-seckill-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pinyougou" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pinyougou" type="462c0819:PsiDirectoryNode" />
+              <item name="pinyougou-seckill-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pinyougou" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pinyougou" type="462c0819:PsiDirectoryNode" />
+              <item name="pinyougou-seckill-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pinyougou" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pinyougou" type="462c0819:PsiDirectoryNode" />
+              <item name="pinyougou-seckill-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -223,7 +260,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.PinyougouSeckillServiceApplication">
+  <component name="RunManager" selected="Spring Boot.PinyougouSeckillWebApplication">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
@@ -309,12 +346,12 @@
       <workItem from="1589955404649" duration="1919000" />
       <workItem from="1589965131323" duration="2343000" />
       <workItem from="1589967706584" duration="1093000" />
-      <workItem from="1589969323285" duration="6464000" />
+      <workItem from="1589969323285" duration="14279000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25026000" />
+    <option name="totallyTimeSpent" value="32841000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -346,12 +383,12 @@
       <window_info anchor="bottom" id="Java Enterprise" order="7" weight="0.3291592" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3291592" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3291592" />
       <window_info anchor="bottom" id="Spring" order="7" weight="0.3291592" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.3291592" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4940476" visible="true" weight="0.2611156" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49194992" visible="true" weight="0.2611156" />
       <window_info anchor="right" id="Bean Validation" order="3" weight="0.32983023" />
-      <window_info id="Web" order="2" sideWeight="0.50595236" side_tool="true" weight="0.2700081" />
+      <window_info id="Web" order="2" sideWeight="0.5080501" side_tool="true" visible="true" weight="0.2611156" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" sideWeight="0.50666666" side_tool="true" weight="0.2700081" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -373,13 +410,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pinyougou-seckill-web/src/main/java/com/oracle/pinyougou/PinyougouSeckillWebApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pinyougou-seckill-web/src/main/java/com/oracle/pinyougou/controller/controller/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
@@ -595,13 +625,6 @@
     <entry file="file://$PROJECT_DIR$/pinyougou-seckill-web/pom.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/pinyougou-seckill-web/src/main/resources/templates/seckill-item.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.0.8.RELEASE/spring-webmvc-5.0.8.RELEASE.jar!/org/springframework/web/servlet/DispatcherServlet.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
@@ -664,17 +687,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pinyougou-seckill-web/src/main/resources/templates/seckill-index.html">
+    <entry file="file://$PROJECT_DIR$/pinyougou-common/src/main/java/util/Constant.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="175" column="116" selection-start-line="175" selection-start-column="116" selection-end-line="175" selection-end-column="116" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pinyougou-seckill-web/src/main/java/com/oracle/pinyougou/controller/controller/SeckillController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        <state relative-caret-position="57">
+          <caret line="3" column="64" selection-start-line="3" selection-start-column="64" selection-end-line="3" selection-end-column="64" />
         </state>
       </provider>
     </entry>
@@ -688,12 +704,31 @@
     <entry file="file://$PROJECT_DIR$/pinyougou-seckill-service/src/main/java/com/oracle/pinyougou/service/SeckillGoodsServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="197">
-          <caret line="85" column="26" lean-forward="true" selection-start-line="85" selection-start-column="26" selection-end-line="85" selection-end-column="26" />
+          <caret line="94" column="42" selection-start-line="94" selection-start-column="26" selection-end-line="94" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2754#2755#0" expanded="true" />
-            <element signature="e#2780#2781#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pinyougou-seckill-web/src/main/java/com/oracle/pinyougou/controller/controller/SeckillController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pinyougou-seckill-web/src/main/resources/templates/seckill-index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="179" column="95" lean-forward="true" selection-start-line="179" selection-start-column="95" selection-end-line="179" selection-end-column="95" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pinyougou-seckill-web/src/main/resources/templates/seckill-item.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="200" column="64" selection-start-line="200" selection-start-column="64" selection-end-line="200" selection-end-column="64" />
         </state>
       </provider>
     </entry>

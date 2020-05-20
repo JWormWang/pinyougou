@@ -26,4 +26,11 @@ public class SeckillController {
 
        return "seckill-index";
    }
+   @RequestMapping("/view")
+    public String view(long id,Map map){
+    TbSeckillGoods tbSeckillGoods=seckillGoodsService.findOneFromRedis(id);
+    map.put("goods",tbSeckillGoods);
+
+       return  "/seckill-item";
+   }
 }

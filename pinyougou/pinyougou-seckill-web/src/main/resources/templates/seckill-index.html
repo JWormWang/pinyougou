@@ -165,7 +165,7 @@ $(function(){
 			<ul  class="seckill" id="seckill">
 
 				<li th:each="good:${goods}"  class="seckill-item" >
-					<div class="pic" onclick="location.href='seckill-item.html'">
+					<div class="pic" th:onclick="'location.href=\'/seckill/view?id='+${good.id}+'\''">
 						<img th:src="${good.smallPic}" src="/img/_/list.jpg" alt=''  >
 					</div>
 					<div class="intro"><span>[[${good.title}]]</span></div>
@@ -177,7 +177,7 @@ $(function(){
 						</div>
 						<div>剩余<b class='owned'>[[${good.stockCount}]]</b>件</div>
 					</div>
-					<a class='sui-btn btn-block btn-buy' href='seckill-item.html' target='_blank'>立即抢购</a>
+					<a class='sui-btn btn-block btn-buy' th:href="@{/seckill/view(id=${good.id})}" href='seckill-item.html' target='_blank'>立即抢购</a>
 				</li>
 
 			</ul>

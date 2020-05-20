@@ -157,6 +157,20 @@ $(function(){
 					alert("关注成功");
 				});
 			})
+	//读秒处理
+            var endDate = new Date("[[${goods.endTime}]]"); //结束时间
+            var now = new Date(); //当前时间
+            var sumSec = Math.floor((endDate.getTime()-now.getTime())/1000); //距离结束总秒数
+            window.setInterval(calTime,1000);
+            function calTime() {
+                var day = Math.floor(sumSec / (24 * 60 * 60)); //天数
+                var hour = Math.floor((sumSec - day * 24 * 60 * 60) / (60 * 60)); //小时数
+                var min = Math.floor((sumSec - day * 24 * 60 * 60 - hour * 60 * 60) / 60); //分钟数
+                var sec = Math.floor(sumSec - day * 24 * 60 * 60 - hour * 60 * 60 - min * 60); //秒数
+                $("#disEndTime").text("距离结束：" + day + "天" + (hour < 10 ? "0" + hour : hour) + ":"
+                    + (min < 10 ? "0" + min : min) + ":" + (sec < 10 ? "0" + sec : sec));
+                sumSec = sumSec - 1;
+            }
 		</script>
 </body>
 	<div class="py-container">
@@ -173,18 +187,18 @@ $(function(){
 					<div class="zoom">
 						<!--默认第一个预览-->
 						<div id="preview" class="spec-preview">
-							<span class="jqzoom"><img jqimg="/img/_/b1.png" src="/img/_/s1.png" /></span>
+							<span class="jqzoom"><img  th:jqimg="${goods.smallPic}" jqimg="/img/_/b1.png" th:src="${goods.smallPic}" width="400px" height="400px" src="/img/_/s1.png" /></span>
 						</div>
 					</div>
 
 				</div>
 				<div class="fr itemInfo-wrap">
 					<div class="sku-name">
-						<h4>Apple iPhone 6s（A1700）64G玫瑰金色 移动通信电信4G手机</h4>
+						<h4>[[${goods.title}]]</h4>
 					</div>
 					<div class="news">
 						<span><img src="/img/_/clock.png"/>品优秒杀</span>
-						<span class="overtime">距离结束：01:56:78</span>
+						<span class="overtime" id="disEndTime"> </span>
 					</div>
 					<div class="summary">
 						<div class="summary-wrap">
@@ -194,11 +208,11 @@ $(function(){
 							</div>
 							<div class="fl price">
 								<i>¥</i>
-								<em>5299.00</em>
-								<span>原价：5699.00</span>
+								<em>[[${goods.costPrice}]]</em>
+								<span>原价：[[${goods.price}]]</span>
 							</div>
 							<div class="fr remark">
-								剩余库存：10
+								剩余库存：[[${goods.stockCount}]]
 							</div>
 						</div>
 						<div class="summary-wrap">
