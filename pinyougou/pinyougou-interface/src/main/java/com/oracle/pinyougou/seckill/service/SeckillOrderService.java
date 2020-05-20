@@ -63,7 +63,7 @@ public interface SeckillOrderService {
 	 * @param seckillId
 	 * @param userId
 	 */
-	public void submitOrder(Long seckillId, String userId);
+	public Long submitOrder(Long seckillId, String userId);
 	
 	/**
 	 * 从缓存中提取订单
