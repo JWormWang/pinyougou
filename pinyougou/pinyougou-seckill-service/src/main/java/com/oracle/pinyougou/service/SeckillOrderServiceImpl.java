@@ -2,8 +2,10 @@ package com.oracle.pinyougou.service;
 
 import com.alibaba.dubbo.config.annotation.Service;
 import com.oracle.pinyougou.mapper.TbSeckillGoodsMapper;
+import com.oracle.pinyougou.mapper.TbSeckillOrderMapper;
 import com.oracle.pinyougou.pojo.TbSeckillGoods;
 import com.oracle.pinyougou.pojo.TbSeckillOrder;
+import com.oracle.pinyougou.seckill.service.SeckillGoodsService;
 import com.oracle.pinyougou.seckill.service.SeckillOrderService;
 import entity.PageResult;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -105,13 +107,47 @@ private RedisTemplate redisTemplate;
         TbSeckillOrder order=(TbSeckillOrder)map.get(orderid);
         return order;
     }
-
+@Autowired
+private TbSeckillOrderMapper orderMapper;
     @Override
     public void saveOrderFromRedisToDb(String userId, Long orderId, String transactionId) {
+        //支付成功后，订单保存到数据库
+     TbSeckillOrder order=searchOrderFromRedisByUserId(userId,String.valueOf(orderId.longValue()));
+     order.setTransactionId(transactionId);
+     order.setPayTime(new Date());
+     order.setStatus("1");
+     orderMapper.insert(order);
+     //从缓存中删除订单
+        Map map= (Map)redisTemplate.boundHashOps(Constant.SECKILLORDER_KEY).get(userId);
+        map.remove(String.valueOf(orderId.longValue()));
+        redisTemplate.boundHashOps(Constant.SECKILLORDER_KEY).put(userId,map);
     }
-
+@Autowired
+private SeckillGoodsService seckillGoodsService;
+    @Autowired
+    private TbSeckillGoodsMapper tbseckillGoodsMapper;
     @Override
     public void deleteOrderFromRedis(String userId, Long orderId) {
+        //支付失败时，将订单从缓存中删除，商品数量加一，更新缓存
+        TbSeckillOrder order=searchOrderFromRedisByUserId(userId,String.valueOf(orderId.longValue()));
+        Map map= (Map)redisTemplate.boundHashOps(Constant.SECKILLORDER_KEY).get(userId);
+        map.remove(String.valueOf(orderId.longValue()));
+        redisTemplate.boundHashOps(Constant.SECKILLORDER_KEY).put(userId,map);
+        //商品数量加1，更新缓存
+       TbSeckillGoods goods=  seckillGoodsService.findOneFromRedis(orderId);
+      if(goods==null){
+          goods=  tbseckillGoodsMapper.selectByPrimaryKey(order.getSeckillId());
+          //时间的判断
+      }
+        goods.setStockCount(goods.getStockCount()+1);
+        redisTemplate.boundHashOps(Constant.SECKILLGOOD_KEY).put(goods.getId(),goods);
+
+//          goods.setStockCount(goods.getStockCount()+1);
+//          redisTemplate.boundHashOps(Constant.SECKILLGOOD_KEY).put(goods.getId(),goods);
+//      }else {
+//        goods.setStockCount(goods.getStockCount()+1);
+//          redisTemplate.boundHashOps(Constant.SECKILLGOOD_KEY).put(goods.getId(),goods);
+//      }
 
     }
 }

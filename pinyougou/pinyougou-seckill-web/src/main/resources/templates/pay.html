@@ -58,7 +58,8 @@
 					<div class="fl sao">
 						<p class="red">二维码已过期，刷新页面重新获取二维码。</p>
 						<div class="fl code">
-							<img src="/img/erweima.jpg" width="200px" height="200px" alt="">
+							<img src="/img/erweima.jpg" id="erweima" width="200px" height="200px" alt="">
+							<!--<img  id="erweima" width="200px" height="200px" alt="">-->
 							<div class="saosao">
 								<p>请使用微信扫一扫</p>
 								<p>扫描二维码支付</p>
@@ -220,6 +221,40 @@
 				$("ul.payType li").click(function(){
 					$(this).css("border","2px solid #E4393C").siblings().css("border-color","#ddd");
 				})
+         //进入页面，发送获得二维码url的Ajax请求
+				$.ajax({
+				url:"/seckill/createNative",
+                type:"post",
+				data:{orderId:'[[${order.id}]]'},
+				dataType:"json",
+				success:function (data) {
+                    var qr=new QRious({
+                        element:document.getElementById('erweima'),
+                        size:250,
+                        value:data.code_url,
+                        level:'H'
+                    });
+                }
+
+				});
+                //查询支付状态
+                $.ajax({
+                    url:"/seckill/queryPayStatus",
+                    data:{out_trade_no:[[${order.id}]]},
+                    success:function(data){
+                        if(data.success){
+                            location.href="/seckill/paysuccess?money="+[[${order.money}]];
+                        }else{
+                            if(response.message=='二维码超时'){
+                                alert("二维码超时");
+                            }else{
+                                location.href="/seckill/payfail";
+                            }
+                        }
+                    },
+                    dataType:"json"
+                });
+
 			})
 		</script>
 </body>

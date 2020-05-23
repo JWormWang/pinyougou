@@ -15,6 +15,7 @@ import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 @Service
+@org.springframework.stereotype.Service
 public class SeckillGoodsServiceImpl implements SeckillGoodsService{
    @Autowired
    private TbSeckillGoodsMapper seckillGoodsMapper;
