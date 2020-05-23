@@ -63,14 +63,14 @@ public interface SeckillOrderService {
 	 * @param seckillId
 	 * @param userId
 	 */
-	public Long submitOrder(Long seckillId, String userId);
+	public String submitOrder(Long seckillId, String userId);
 	
 	/**
 	 * 从缓存中提取订单
 	 * @param userId
 	 * @return
 	 */
-	public TbSeckillOrder searchOrderFromRedisByUserId(String userId);
+	public TbSeckillOrder searchOrderFromRedisByUserId(String userId,String orderid);
 	
 	/**
 	 * 保存订单到数据库

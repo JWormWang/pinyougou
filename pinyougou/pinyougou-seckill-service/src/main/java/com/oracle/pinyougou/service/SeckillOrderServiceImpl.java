@@ -57,7 +57,7 @@ private RedisTemplate redisTemplate;
     @Autowired
     private TbSeckillGoodsMapper seckillGoodsMapper;
     @Override
-    public Long submitOrder(Long seckillId, String userId) {
+    public String submitOrder(Long seckillId, String userId) {
         //查询秒杀商品
         TbSeckillGoods seckillGoods=(TbSeckillGoods) redisTemplate.boundHashOps(Constant.SECKILLGOOD_KEY).get(seckillId);
        if(seckillGoods==null||seckillGoods.getStockCount()==0){
@@ -88,20 +88,22 @@ private RedisTemplate redisTemplate;
       Object obj= redisTemplate.boundHashOps(Constant.SECKILLORDER_KEY).get(userId);
       if(obj==null){
           Map map=new HashMap();
-          map.put(order.getId(),order);
+          map.put(String.valueOf(order.getId()),order);
           redisTemplate.boundHashOps(Constant.SECKILLORDER_KEY).put(userId,map);
       }else{
           Map map=(Map)obj;
-          map.put(order.getId(),order);
+          map.put(String.valueOf(order.getId()),order);
           redisTemplate.boundHashOps(Constant.SECKILLORDER_KEY).put(userId,map);
 
       }
-      return   order.getId();
+      return  String.valueOf(order.getId());
     }
 
     @Override
-    public TbSeckillOrder searchOrderFromRedisByUserId(String userId) {
-        return null;
+    public TbSeckillOrder searchOrderFromRedisByUserId(String userId,String  orderid) {
+       Map map= (Map)redisTemplate.boundHashOps(Constant.SECKILLORDER_KEY).get(userId);
+        TbSeckillOrder order=(TbSeckillOrder)map.get(orderid);
+        return order;
     }
 
     @Override
