@@ -12,6 +12,7 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 public class PinyougouSeckillServiceApplication {
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(PinyougouSeckillServiceApplication.class, args);
 	}
 

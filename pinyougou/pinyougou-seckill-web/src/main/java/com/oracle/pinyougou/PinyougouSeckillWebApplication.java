@@ -9,6 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class PinyougouSeckillWebApplication {
 
     public static void main(String[] args) {
+
         SpringApplication.run(PinyougouSeckillWebApplication.class, args);
     }
 
